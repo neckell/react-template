@@ -1,0 +1,17 @@
+:root {
+    --breakpoint-xxs-size: 0px;
+    --breakpoint-xxs-columns: 4;
+    --breakpoint-xxs-gap: 24px;
+    --breakpoint-xs-size: 768px;
+    --breakpoint-xs-columns: 8;
+    --breakpoint-xs-gap: 24px;
+    --breakpoint-s-size: 1024px;
+    --breakpoint-s-columns: 8;
+    --breakpoint-s-gap: 24px;
+    --breakpoint-m-size: 1280px;
+    --breakpoint-m-columns: 12;
+    --breakpoint-m-gap: 24px;
+    --breakpoint-l-size: 1366px;
+    --breakpoint-l-columns: 12;
+    --breakpoint-l-gap: 24px;
+}

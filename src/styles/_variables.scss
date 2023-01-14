@@ -1,0 +1,97 @@
+@import 'globalColors';
+
+$primary-bg: var(--primary-bg);
+$secondary-2-bg: var(--secondary-2-bg);
+$secondary-1-text: var(--secondary-1-text);
+$secondary-3-bg: var(--secondary-3-bg);
+$secondary-3-bg-strong: var(--secondary-3-bg-strong);
+$neutral-bg-inverted: var(--neutral-bg-inverted);
+$neutral-border-strong: var(--neutral-border-strong);
+$neutral-text-weak: var(--neutral-text-weak);
+$neutral-bg-strong: var(--neutral-bg-strong);
+$neutral-bg: var(--neutral-bg);
+$danger-bg: var(--danger-bg);
+$warning-bg: var(--warning-bg);
+$info-bg: var(--info-bg);
+$success-bg: var(--success-bg);
+$primary-bg-strong: var(--primary-bg-strong);
+$secondary-1-bg: var(--secondary-1-bg);
+$secondary-1-text-strong: var(--secondary-1-text-strong);
+$primary-text-weak: var(--primary-text-weak);
+$primary-text-strong: var(--primary-text-strong);
+$neutral-bg-stronger: var(--neutral-bg-stronger);
+$danger-bg-weak: var(--danger-bg-weak);
+$success-bg-weak: var(--success-bg-weak);
+$info-bg-weak: var(--info-bg-weak);
+$neutral-text: var(--neutral-text);
+$neutral-text-strong: var(--neutral-text-strong);
+$neutral-text-inverted: var(--neutral-text-inverted);
+
+$grey-text-color: $neutral-text;
+$text-light-gray: $neutral-text;
+$page-title-color: $neutral-text-strong;
+$prisma-color-primary: $neutral-text-strong;
+$btn-secondary-hover: $primary-bg-strong;
+$btn-secondary-border: $primary-bg;
+$btn-secondary-disabled: $neutral-bg-stronger;
+$link-color: $primary-text-weak;
+$text-gray: $neutral-border-strong;
+$text-dark-gray: $neutral-bg-inverted;
+
+
+//old
+$background-white: #ffffff;
+$liquidation-white: #ffffff;
+$palette-background-cards-white: #ffffff;
+$palette-background-cards: #ffffff;
+$border-row-table: #e8e8e8;
+$colores-gris-4: #999999;
+$colores-notificaciones: #00cccc;
+$palette-gradient-blue: linear-gradient(to bottom, #5a96fc, #3773dc);
+$palette-gradient-green-focus: linear-gradient(to bottom, #05e9ea, #26cbcc);
+$palette-gradient-green-hover: linear-gradient(to bottom, #06e1e3, #20b9ba);
+$palette-gradient-green-pressed: linear-gradient(to bottom, #06aaab, #20b9ba);
+$palette-gradient-green: linear-gradient(to bottom, #05e9ea, #26cbcc);
+$palette-gradient-orange: linear-gradient(to bottom, #fdbc73 1%, #ffa53f);
+$palette-primary-p-1-p-1-02: #d2f1f1;
+$prisma-blue: #023f86;
+$prisma-green: #00b0b4;
+$prisma-red: #e51b54;
+
+//Table
+$border-row-table: #e8e8e8;
+
+//NOTA: PARA DEJAR AL 100%
+.rsg--content-3 {
+  max-width: none;
+  padding: 0;
+  margin: auto;
+  background-color: #f5f5f5;
+}
+div[class*='rsg--preview-'] {
+  padding: 0;
+  border: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+  font-weight: normal;
+  margin: 0;
+}
+
+code[class*='rsg--code-'] {
+  color: darkgreen;
+  font-size: 14px;
+}
+

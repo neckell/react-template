@@ -1,0 +1,13 @@
+:root {
+  /* Excepción disponible para gráficos, será deprecado */
+  --text-preset-1-bold-font-size: 32px;
+  --text-preset-1-bold-line-height: 24px;
+  --text-preset-1-bold-font-family: Rubik, serif;
+  --text-preset-1-bold-font-weight: 500;
+  --text-preset-5-font-size: 20px;
+  --text-preset-5-line-height: 28px;
+  --text-preset-5-font-family: Rubik, serif;
+  --text-preset-9-font-size: 14px;
+  --text-preset-9-line-height: 24px;
+  --text-preset-9-font-family: Roboto, serif;
+}
