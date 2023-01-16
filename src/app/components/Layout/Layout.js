@@ -1,6 +1,5 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { routes } from "../../../routes/routes";
 import App from "../App/App";
 import "./Layout.scss";
 
