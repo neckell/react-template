@@ -1,5 +1,5 @@
 {
-    "norte": [
+    "Norte": [
         {
             "start": "00:30",
             "band": "JUANSE"
@@ -37,7 +37,7 @@
             "band": "FAROLITOS"
         }
     ],
-    "sur": [
+    "Sur": [
         {
             "start": "00:25",
             "band": "JUAN INGARAMO"
@@ -79,13 +79,13 @@
             "band": "SYNÓPSIS"
         }
     ],
-    "montaña": [
+    "Montaña": [
         {
-            "start": "2:30",
+            "start": "02:30",
             "band": "CHARLOTTE DE WITTE"
         },
         {
-            "start": "1:20",
+            "start": "01:20",
             "band": "ENRICO SANGIULIANO"
         },
         {
@@ -117,7 +117,7 @@
             "band": "ESTELARES"
         }
     ],
-    "boomerang": [
+    "Boomerang": [
         {
             "start": "00:45",
             "band": "GATIVIDEO"
@@ -203,7 +203,7 @@
     ],
     "Paraguay": [
         {
-            "start": "1:40 ",
+            "start": "01:40 ",
             "band": "FIESTA BRESH"
         },
         {
