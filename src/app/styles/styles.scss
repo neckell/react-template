@@ -1,0 +1,29 @@
+@import "_variables.scss";
+
+@for $i from 1 through 100 {
+	.w-#{$i} {
+		width: $i * 1%;
+	}
+}
+
+@for $i from 0 through 5 {
+	.mb-#{$i} {
+		margin-bottom: $i * 1em;
+	}
+}
+
+@mixin lightenColor($base-color: black, $lightening: 1) {
+	background-color: lighten($base-color, $lightening * 1%);
+}
+
+@mixin darkenColor($base-color: black, $lightening: 1) {
+	background-color: darken($base-color, $lightening * 1%);
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.it {
+	font-style: italic;
+}

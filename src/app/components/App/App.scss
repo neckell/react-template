@@ -1,0 +1,83 @@
+@import "../../styles/styles.scss";
+
+.app {
+	min-height: 100vh;
+	height: 150vh;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 20px;
+	padding: 10px 20px;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.1rem;
+	transition: all 0.3s ease-out;
+	border: 0px;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.add-button {
+	background-color: $success-bg;
+}
+
+.delete-button {
+	background-color: red;
+}
+
+.add-button:hover {
+	@include darkenColor(green, 5);
+}
+
+.delete-button:hover {
+	@include darkenColor(red, 10);
+}
+
+a:visited,
+a:hover,
+a {
+	text-decoration: none;
+	color: inhirit;
+}
+
+.total {
+	padding: 10px 20px;
+	border: 5px solid red;
+	border-radius: 20px;
+	margin: 20px auto;
+	font-size: 1.75rem;
+	text-align: center;
+	label {
+		font-weight: bold;
+	}
+	span {
+		color: $success-bg;
+	}
+}
+
+.download {
+	font-size: 1rem;
+}
+
+.header {
+	background-color: #691d6b;
+	color: white;
+	padding: 16px;
+	text-align: center;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+}
+
+.footer {
+	background-color: var(--neutral-text-strong);
+	color: white;
+	position: fixed;
+	bottom: 0%;
+	width: 100%;
+	padding: 16px;
+	text-align: center;
+}

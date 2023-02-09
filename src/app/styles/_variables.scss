@@ -1,4 +1,4 @@
-@import 'globalColors';
+@import "globalColors";
 
 $primary-bg: var(--primary-bg);
 $secondary-2-bg: var(--secondary-2-bg);
@@ -38,7 +38,6 @@ $link-color: $primary-text-weak;
 $text-gray: $neutral-border-strong;
 $text-dark-gray: $neutral-bg-inverted;
 
-
 //old
 $background-white: #ffffff;
 $liquidation-white: #ffffff;
@@ -63,19 +62,19 @@ $border-row-table: #e8e8e8;
 
 //NOTA: PARA DEJAR AL 100%
 .rsg--content-3 {
-  max-width: none;
-  padding: 0;
-  margin: auto;
-  background-color: #f5f5f5;
+	max-width: none;
+	padding: 0;
+	margin: auto;
+	background-color: #f5f5f5;
 }
-div[class*='rsg--preview-'] {
-  padding: 0;
-  border: none;
+div[class*="rsg--preview-"] {
+	padding: 0;
+	border: none;
 }
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 h1,
@@ -86,12 +85,11 @@ h5,
 h6,
 p,
 label {
-  font-weight: normal;
-  margin: 0;
+	font-weight: normal;
+	margin: 0;
 }
 
-code[class*='rsg--code-'] {
-  color: darkgreen;
-  font-size: 14px;
+code[class*="rsg--code-"] {
+	color: darkgreen;
+	font-size: 14px;
 }
-

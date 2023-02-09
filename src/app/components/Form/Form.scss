@@ -1,0 +1,36 @@
+@import "../../styles/styles.scss";
+
+.checkbox {
+	padding: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.start {
+		margin-right: 12px;
+	}
+	input {
+		transform: scale(1.5);
+		cursor: pointer;
+	}
+	input[type="checkbox"] {
+		accent-color: #921034;
+	}
+}
+
+.groups {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.group {
+	margin: 8px;
+	padding: 16px;
+	background-color: #d8ebff;
+	border-radius: 35px;
+	width: 280px;
+
+	.group-name {
+		text-align: center;
+		margin-bottom: 8px;
+	}
+}

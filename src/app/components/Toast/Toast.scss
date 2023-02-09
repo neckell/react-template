@@ -1,0 +1,102 @@
+// @import '../../assets/styles/_variables.scss';
+$success-bg-weak: green;
+$danger-bg-weak: red;
+$info-bg-weak: orange;
+$secondary-3-bg-strong: violet;
+
+.toast-styles {
+	top: 0;
+	left: 50px;
+	width: 100px;
+	height: 50px;
+}
+
+.Toastify__toast-icon {
+	display: none !important;
+}
+
+.Toastify__toast-body {
+	// width: 360px;
+}
+.Toast__toast-body--md-full {
+	width: 100%;
+}
+.Toastify__toast-container {
+	z-index: 9999;
+	position: absolute;
+}
+.Toastify__toast {
+	margin: 10px;
+}
+.Toastify__toast-container--top-left {
+	top: 0px;
+	left: 0px;
+}
+.Toastify__toast-container--top-center {
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.Toastify__toast-container--top-right {
+	top: 0px;
+	right: 0px;
+}
+.Toastify__toast-container--bottom-left {
+	bottom: 0px;
+	left: 0px;
+}
+.Toastify__toast-container--bottom-center {
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.Toastify__toast-container--bottom-right {
+	bottom: 0px;
+	right: 0px;
+}
+.Toastify__toast--success {
+	background: $success-bg-weak;
+}
+.Toastify__toast--error {
+	background: $danger-bg-weak;
+}
+.Toastify__toast--info {
+	background: $info-bg-weak;
+}
+.Toastify__toast--warning {
+	background: $secondary-3-bg-strong;
+}
+@keyframes Toastify__fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes Toastify__fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+.Toastify__fade-enter {
+	animation-name: Toastify__fadeIn;
+}
+
+.Toastify__fade-exit {
+	animation-name: Toastify__fadeOut;
+}
+@keyframes Toastify__trackProgress {
+	0% {
+		transform: scaleX(1);
+	}
+	100% {
+		transform: scaleX(0);
+	}
+}
+.Toastify__progress-bar--animated {
+	animation: Toastify__trackProgress linear 1 forwards;
+}

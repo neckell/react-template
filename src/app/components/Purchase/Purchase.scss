@@ -1,0 +1,48 @@
+.card-container {
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	border-radius: 20px;
+	border: 2px solid #616161;
+	box-shadow: #676767 3px 5px 4px -2px;
+	padding: 5px 20px;
+	margin: 10px 20px;
+	background-color: #ddaeb6;
+}
+
+.card {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	font-size: 1rem;
+}
+
+.card-input {
+	margin: 5px 10px;
+	width: 30%;
+	height: 30px;
+	border-radius: 10px;
+	border: 2px solid #bebeac;
+	text-align: center;
+}
+
+.card-prop {
+	display: flex;
+	flex-direction: column;
+	margin: 5px 10px;
+	width: 25%;
+	label {
+		font-size: 0.875rem;
+		font-style: italic;
+	}
+	span {
+		font-weight: bold;
+		&.price {
+			color: green;
+		}
+	}
+}
+
+.add-enter-button {
+	background-color: blue;
+}
