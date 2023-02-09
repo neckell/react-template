@@ -23,8 +23,9 @@ function App() {
 			<h1>Bienvenidos a ¡Arma tu grilla Cosquín Rock 2023!</h1>
 			<p>
 				Para armar tu grilla, debes seleccionar las bandas que quieres
-				ver. Al finalizar, podrás ver tu grilla armada y compartirla con
-				tus amigos para sincronizarse!
+				ver y clickear dos veces en el botón de abajo al fondo. Al
+				finalizar, podrás ver tu grilla armada y compartirla con tus
+				amigos para sincronizarse!
 			</p>
 		</div>
 	);
