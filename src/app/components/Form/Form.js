@@ -1,8 +1,8 @@
 import React from "react";
-import { Form, Formik, Field, useFormik, useFormikContext } from "formik";
-import "./Form.scss";
-import { isEmptyObject, isNullOrEmpty } from "../../utils/validations-utils";
+import { Form, Formik } from "formik";
+import { isNullOrEmpty } from "../../utils/validations-utils";
 import CheckBox from "./CheckBox";
+import "./Form.scss";
 
 const getInitialValues = (bands) => {
 	if (isNullOrEmpty(bands)) return {};
@@ -49,15 +49,7 @@ const CrForm = ({ bands, onSubmit }) => {
 				onSubmit={onSubmit}
 				enableReinitialize
 			>
-				{({
-					values,
-					errors,
-					touched,
-					isValid,
-					dirty,
-					handleChange,
-					handleBlur,
-				}) => {
+				{() => {
 					return (
 						<Form className="form">
 							<div className="groups">

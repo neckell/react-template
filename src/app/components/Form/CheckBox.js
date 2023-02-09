@@ -1,7 +1,7 @@
 import React from "react";
-import { Form, Formik, Field, useFormik, useFormikContext } from "formik";
+import { Field, useFormikContext } from "formik";
+import { isEmptyObject } from "../../utils/validations-utils";
 import "./Form.scss";
-import { isEmptyObject, isNullOrEmpty } from "../../utils/validations-utils";
 
 const CheckBox = ({ groupName, index, band, start }) => {
 	const { values, setValues } = useFormikContext();
