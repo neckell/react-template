@@ -99,8 +99,7 @@ function App() {
 		setStage1(aux);
 		setIsStage2(true);
 		window.scrollTo({
-			top: 100,
-			left: 0,
+			top: 0,
 			behavior: "smooth",
 		});
 	};
