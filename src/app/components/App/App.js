@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
 import CrForm from "../Form/Form";
-import file from "../../resources/cr23_day_1.json";
+import file1 from "../../resources/cr23_day_1.json";
+import file2 from "../../resources/cr23_day_1.json";
+import sortHoursDescending from "../../utils/orderHours";
 
 function App() {
-	const [bands, setBands] = useState({});
+	const [bands1, setBands1] = useState({});
+	const [bands2, setBands2] = useState({});
 
 	useEffect(() => {
 		loadData();
 	}, []);
 
 	const loadData = () => {
-		setBands(file);
+		setBands1(file1);
+		setBands2(file2);
 	};
 
 	const header = (
@@ -27,42 +31,46 @@ function App() {
 
 	const footer = (
 		<div className="footer">
-			<p>Este sitio es totalmente seguro. Copyrights reservados 2023</p>
+			<p>Este sitio es totalmente seguro. Copyrights©2023 reservados.</p>
 			<br />
 			<p>
 				Si tenes alguna consulta o sugerencia, te dejo mi mail de
-				contacto: niceckell@gmail.com
+				contacto: niceckell@hotmail.com
 			</p>
 		</div>
 	);
 
-	const [output, setOutput] = useState([]);
+	const [stage1, setStage1] = useState([]);
+	const [isStage2, setIsStage2] = useState(false);
 
-	const buildArr = (values) => {
+	const buildArr = (values, bands) => {
 		let obj = [];
-		Object.keys(bands).map((key) =>
-			values[key].map((band, idx) => band && obj.push(bands[key][idx]))
+		Object.keys(bands1).map((key) =>
+			values[key].map((band, idx) => band && obj.push(bands1[key][idx]))
 		);
 		return obj;
 	};
 
-	const getFinalText = (arr) => {
-		if (arr.length === 0) return "";
-		arr.sort((a, b) => a.start < b.start);
-		let final = arr.reduce((acc, item) => {
+	const getFormatedText = (arr) => {
+		return sortHoursDescending(arr).reduce((acc, item) => {
 			return acc + item.start + " - " + item.band + "\n";
 		}, "");
+	};
+
+	const getFinalText = (a, b) => {
 		return (
 			"Mi grilla del CR23: " +
-			"\n" +
-			final +
+			"\n\n" +
+			"Dia 1: \n" +
+			a +
+			"\nDia 2: \n" +
+			b +
 			"\n" +
 			"Quieres armar tu grilla? Ingresa a (sitio seguro):"
 		);
 	};
 
-	const onSubmit = (values) => {
-		let data = getFinalText(buildArr(values));
+	const exportData = (data) => {
 		if (navigator.share) {
 			navigator
 				.share({
@@ -82,10 +90,40 @@ function App() {
 		}
 	};
 
+	const onSubmit = (values) => {
+		if (isStage2) {
+			onSubmit2(values);
+			return;
+		}
+		let aux = buildArr(values, bands1);
+		setStage1(aux);
+		setIsStage2(true);
+		window.scrollTo({
+			top: 100,
+			left: 0,
+			behavior: "smooth",
+		});
+	};
+
+	const onSubmit2 = (values) => {
+		let aux = buildArr(values, bands2);
+
+		let data1 = getFormatedText(stage1);
+		let data2 = getFormatedText(aux);
+
+		let data = getFinalText(data1, data2);
+
+		exportData(data);
+	};
+
 	const layout = (
 		<>
 			{header}
-			<CrForm onSubmit={onSubmit} bands={bands} />
+			<CrForm
+				onSubmit={onSubmit}
+				bands={isStage2 ? bands2 : bands1}
+				isStage2={isStage2}
+			/>
 			{footer}
 		</>
 	);

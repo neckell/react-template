@@ -34,15 +34,15 @@
 }
 
 .delete-button {
-	background-color: red;
+	background-color: #ff95b3;
 }
 
 .add-button:hover {
 	@include darkenColor(green, 5);
 }
 
-.delete-button:hover {
-	@include darkenColor(red, 10);
+.delete-button {
+	cursor: initial;
 }
 
 a:visited,

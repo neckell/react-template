@@ -19,15 +19,15 @@ const CheckBox = ({ groupName, index, band, start }) => {
 		setValues(newInterests);
 	};
 
-	const arr = isEmptyObject(values) ? null : values[groupName][index];
+	const arr = isEmptyObject(values) ? false : values[groupName][index];
 	return (
 		<div className="checkbox">
 			<span className="band">{band}</span>
 			<div className="checkbox-time">
 				<span className="start">{start}</span>
 				<Field
-					type="checkbox"
 					id={groupName}
+					type="checkbox"
 					value={index}
 					onChange={handleChange}
 					checked={arr}
