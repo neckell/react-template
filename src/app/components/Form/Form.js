@@ -1,33 +1,35 @@
 import React from "react";
-import { useFormik } from "formik";
+import { Form, Formik, Field, useFormik, useFormikContext } from "formik";
 import "./Form.scss";
+import { isEmptyObject, isNullOrEmpty } from "../../utils/validations-utils";
+import CheckBox from "./CheckBox";
+
+const getInitialValues = (bands) => {
+	if (isNullOrEmpty(bands)) return {};
+	let keys = Object.keys(bands);
+	let initial = {};
+	for (let i = 0; i < keys.length; i++) {
+		const key = keys[i];
+		initial[key] = [...Array(bands[key].length).keys()].map((k) => false);
+	}
+	return initial;
+};
 
 const CrForm = ({ bands, onSubmit }) => {
-	const CheckBox = ({ groupName, index, band, start }) => (
-		<div className="checkbox">
-			<span className="band">{band}</span>
-			<div className="checkbox-time">
-				<span className="start">{start}</span>
-				<input
-					type="checkbox"
-					value={index}
-					onChange={handleChange}
-					checked={formik?.values["norte"][index]}
-				/>
-			</div>
-		</div>
-	);
-
 	const Button = () => (
-		<button className="button add-button">Siguiente día {"->"}</button>
+		<button type="submit" className="button add-button">
+			Compartir!
+		</button>
 	);
 
-	const Group = ({ groupBands, groupName }) => (
+	const Group = ({ stage, groupName }) => (
 		<div className="group">
 			<div className="group-name">
-				<strong>Escenario</strong>: {groupName}
+				<h1>
+					<strong>Escenario</strong>: {groupName}
+				</h1>
 			</div>
-			{groupBands[groupName]?.map((show, key) => (
+			{stage?.map((show, key) => (
 				<CheckBox
 					groupName={groupName}
 					index={key}
@@ -39,38 +41,39 @@ const CrForm = ({ bands, onSubmit }) => {
 		</div>
 	);
 
-	const formik = useFormik({
-		initialValues: {
-			norte: [...Array(10).keys()].map((k) => false),
-		},
-		onSubmit: (values) => {
-			onSubmit(values);
-		},
-	});
-
-	const handleChange = (event) => {
-		const newInterests = [...formik.values.norte];
-		newInterests[event.target.value] = event.target.checked;
-		formik.setValues({
-			...formik.values,
-			norte: newInterests,
-		});
-	};
-
 	if (!!!bands) return <></>;
 	return (
 		<div>
-			<form onSubmit={formik.handleSubmit}>
-				<div className="groups">
-					<Group groupBands={bands} groupName="norte" />
-					<Group groupBands={bands} groupName="sur" />
-					<Group groupBands={bands} groupName="montaña" />
-					<Group groupBands={bands} groupName="boomerang" />
-					<Group groupBands={bands} groupName="Casita de Blues" />
-					<Group groupBands={bands} groupName="Paraguay" />
-				</div>
-				<Button />
-			</form>
+			<Formik
+				initialValues={getInitialValues(bands)}
+				onSubmit={onSubmit}
+				enableReinitialize
+			>
+				{({
+					values,
+					errors,
+					touched,
+					isValid,
+					dirty,
+					handleChange,
+					handleBlur,
+				}) => {
+					return (
+						<Form className="form">
+							<div className="groups">
+								{Object.keys(bands).map((key) => (
+									<Group
+										stage={bands[key]}
+										groupName={key}
+										key={key}
+									/>
+								))}
+							</div>
+							<Button />
+						</Form>
+					);
+				}}
+			</Formik>
 		</div>
 	);
 };

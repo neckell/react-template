@@ -6,7 +6,7 @@ import file from "../../resources/cr23_day_1.json";
 import bg from "../../assets/background-loader.png";
 
 function App() {
-	const [schedule, setSchedule] = useState({});
+	const [bands, setBands] = useState({});
 	const [total, setTotal] = useState(null);
 	const [enableNewPurchase, setEnableNewPurchases] = useState(true);
 
@@ -15,7 +15,7 @@ function App() {
 	}, []);
 
 	const loadData = () => {
-		setSchedule(file);
+		setBands(file);
 	};
 
 	const addNewItemHandler = () => {
@@ -145,11 +145,11 @@ function App() {
 
 	const body = (
 		<div className="header">
-			<h1>Bienvenidos a tu grilla del Cosquín Rock 2023!</h1>
+			<h1>Bienvenidos a ¡Arma tu grilla Cosquín Rock 2023!</h1>
 			<p>
 				Para armar tu grilla, debes seleccionar las bandas que quieres
-				ver. Al finalizar, podrás ver tu grilla armada y commpartirla
-				con tus amigos para sincronizarse!
+				ver. Al finalizar, podrás ver tu grilla armada y compartirla con
+				tus amigos para sincronizarse!
 			</p>
 		</div>
 	);
@@ -173,15 +173,52 @@ function App() {
 	// 	setLoading(false);
 	// }, 3000);
 
+	const buildArr = (values) => {
+		let obj = [];
+		Object.keys(bands).map((key) =>
+			values[key].map((band, idx) => band && obj.push(bands[key][idx]))
+		);
+		return obj;
+	};
+
+	const getFinalText = (arr) => {
+		if (arr.length === 0) return "";
+		arr.sort((a, b) => a.start < b.start);
+		let final = arr.map((item) => {
+			return item.start + " - " + item.band + "\n";
+		});
+		return (
+			final +
+			"\n" +
+			"Quieres armar tu grilla? Ingresa a (es un sitio seguro):"
+		);
+	};
+
 	const onSubmit = (values) => {
-		console.log("submit");
-		console.log(values);
+		let data = getFinalText(buildArr(values));
+		if (navigator.share) {
+			navigator
+				.share({
+					title: `Esta es mi grilla del Cosquín Rock 23`,
+					text: `${data}`,
+					url: document.location.href,
+				})
+				.then(() => {
+					console.log("Successfully shared");
+				})
+				.catch((error) => {
+					console.error(
+						"Something went wrong sharing the blog",
+						error
+					);
+				});
+		}
 	};
 
 	const layout = (
 		<>
 			{body}
-			<CrForm onSubmit={onSubmit} bands={schedule} />
+			<CrForm onSubmit={onSubmit} bands={bands} />
 			{footer}
 		</>
 	);

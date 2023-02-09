@@ -1,5 +1,10 @@
 @import "../../styles/styles.scss";
 
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
 .checkbox {
 	padding: 8px;
 	display: flex;
@@ -15,6 +20,13 @@
 	input[type="checkbox"] {
 		accent-color: #921034;
 	}
+	.band {
+		max-width: 400px;
+	}
+	.checkbox-time {
+		display: flex;
+		justify-content: flex-end;
+	}
 }
 
 .groups {
@@ -28,9 +40,19 @@
 	background-color: #d8ebff;
 	border-radius: 35px;
 	width: 280px;
+	transition: all 0.3s ease-out;
 
 	.group-name {
 		text-align: center;
 		margin-bottom: 8px;
 	}
+	&:hover {
+		background-color: #0a7fe4;
+	}
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 8px;
+	font-size: 20px;
 }
