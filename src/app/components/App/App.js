@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 import CrForm from "../Form/Form";
 import file1 from "../../resources/cr23_day_1.json";
-import file2 from "../../resources/cr23_day_1.json";
+import file2 from "../../resources/cr23_day_2.json";
 import sortHoursDescending from "../../utils/orderHours";
 
 function App() {
@@ -45,8 +45,8 @@ function App() {
 
 	const buildArr = (values, bands) => {
 		let obj = [];
-		Object.keys(bands1).map((key) =>
-			values[key].map((band, idx) => band && obj.push(bands1[key][idx]))
+		Object.keys(bands).map((key) =>
+			values[key].map((band, idx) => band && obj.push(bands[key][idx]))
 		);
 		return obj;
 	};
