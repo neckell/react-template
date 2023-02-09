@@ -115,7 +115,7 @@ function App() {
 	);
 
 	const copyTextToClipboard = (text) => {
-		navigator.clipboard.writeText(text);
+		navigator.clipboard.writeText(text + "\n" + document.location.href);
 	};
 
 	const onSubmit = (values) => {
