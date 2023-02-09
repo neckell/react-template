@@ -184,9 +184,9 @@ function App() {
 	const getFinalText = (arr) => {
 		if (arr.length === 0) return "";
 		arr.sort((a, b) => a.start < b.start);
-		let final = arr.map((item) => {
-			return item.start + " - " + item.band + "\n";
-		});
+		let final = arr.reduce((acc, item) => {
+			return acc + item.start + " - " + item.band + "\n";
+		}, "");
 		return (
 			final +
 			"\n" +
