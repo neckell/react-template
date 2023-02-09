@@ -4,6 +4,8 @@ import CrForm from "../Form/Form";
 import file1 from "../../resources/cr23_day_1.json";
 import file2 from "../../resources/cr23_day_2.json";
 import sortHoursDescending from "../../utils/orderHours";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 	const [bands1, setBands1] = useState({});
@@ -72,7 +74,11 @@ function App() {
 	};
 
 	const exportData = (data) => {
-		if (navigator.share) {
+		copyTextToClipboard(data);
+		toast.success("La grilla fue copiada en el portapapeles", {
+			containerId: "toast-gen",
+		});
+		if (navigator?.share) {
 			navigator
 				.share({
 					title: `Esta es mi grilla del Cosquín Rock 23`,
@@ -89,6 +95,27 @@ function App() {
 					);
 				});
 		}
+	};
+
+	const toastGen = (
+		<ToastContainer
+			containerId={"toast-gen"}
+			position="top-center"
+			autoClose={5000}
+			hideProgressBar
+			newestOnTop
+			closeOnClick={true}
+			rtl={false}
+			pauseOnFocusLoss={true}
+			draggable={false}
+			pauseOnHover={true}
+			closeButton={false}
+			limit={4}
+		/>
+	);
+
+	const copyTextToClipboard = (text) => {
+		navigator.clipboard.writeText(text);
 	};
 
 	const onSubmit = (values) => {
@@ -118,6 +145,7 @@ function App() {
 
 	const layout = (
 		<>
+			{toastGen}
 			{header}
 			<CrForm
 				onSubmit={onSubmit}

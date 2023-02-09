@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Formik, useFormikContext } from "formik";
+import { Form, Formik } from "formik";
 import { isNullOrEmpty } from "../../utils/validations-utils";
 import CheckBox from "./CheckBox";
 import "./Form.scss";
