@@ -3,6 +3,7 @@
 .form {
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 128px;
 }
 
 .checkbox {
@@ -32,6 +33,7 @@
 .groups {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .group {
@@ -48,6 +50,11 @@
 	}
 	&:hover {
 		background-color: #0a7fe4;
+	}
+
+	@media screen and (max-width: 767px) {
+		max-width: 350px;
+		width: 100%;
 	}
 }
 

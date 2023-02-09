@@ -9,15 +9,20 @@
 	display: inline-block;
 	border-radius: 20px;
 	padding: 10px 20px;
-	color: black;
+	color: #22262a;
 	font-weight: bold;
-	text-align: end;
 	font-size: 1.1rem;
 	transition: all 0.3s ease-out;
 	border: 0px;
-	max-width: 172px;
-	align-self: flex-end;
-	margin-right: 32px;
+	text-align: center;
+	width: 350px;
+	align-self: center;
+
+	@media screen and (max-width: 767px) {
+		max-width: 100%;
+		width: 80%;
+		text-align: center;
+	}
 }
 
 .button:hover {
@@ -25,7 +30,7 @@
 }
 
 .add-button {
-	background-color: $success-bg;
+	background-color: #479ef8;
 }
 
 .delete-button {

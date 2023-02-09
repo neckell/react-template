@@ -3,7 +3,7 @@ import "./App.scss";
 import { Toast, useToast } from "../Toast/Toast";
 import CrForm from "../Form/Form";
 import file from "../../resources/cr23_day_1.json";
-import bg from "../../assets/background-loader.png";
+// import bg from "../../assets/background-loader.png";
 
 function App() {
 	const [bands, setBands] = useState({});
@@ -167,7 +167,7 @@ function App() {
 
 	const [loading, setLoading] = useState(false);
 
-	const loader = <img src={bg} alt="fondo" />;
+	// const loader = <img src={bg} alt="fondo" />;
 
 	// setTimeout(() => {
 	// 	setLoading(false);
@@ -226,7 +226,7 @@ function App() {
 	return (
 		<div className="app">
 			{/* {toastGen} */}
-			{loading && loader}
+			{/* {loading && loader} */}
 			{!loading && layout}
 		</div>
 	);
