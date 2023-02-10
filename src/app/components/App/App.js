@@ -132,6 +132,10 @@ function App() {
 		});
 	};
 
+	const goBack = () => {
+		setIsStage2(false);
+	};
+
 	const onSubmit2 = (values) => {
 		let aux = buildArr(values, bands2);
 
@@ -151,6 +155,7 @@ function App() {
 				onSubmit={onSubmit}
 				bands={isStage2 ? bands2 : bands1}
 				isStage2={isStage2}
+				goBack={goBack}
 			/>
 			{footer}
 		</>

@@ -25,10 +25,6 @@
 	}
 }
 
-.button:hover {
-	cursor: pointer;
-}
-
 .add-button {
 	background-color: #479ef8;
 }
@@ -37,7 +33,18 @@
 	background-color: #ff95b3;
 }
 
+.static-button {
+	background-color: #ff95b3;
+	cursor: unset;
+}
+
+.delete-button:hover {
+	cursor: pointer;
+	background-color: #dd2457;
+}
+
 .add-button:hover {
+	cursor: pointer;
 	@include darkenColor(green, 5);
 }
 

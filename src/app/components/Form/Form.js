@@ -34,11 +34,20 @@ const Group = ({ stage, groupName }) => (
 	</div>
 );
 
-const Button = ({ isStage2 }) => {
+const Button = ({ isStage2, goBack }) => {
 	return isStage2 ? (
-		<button type="submit" className="button add-button">
-			Compartir!
-		</button>
+		<div className="buttons">
+			<button
+				type="button delete-button"
+				className="button add-button"
+				onClick={() => goBack()}
+			>
+				Volver al día 1
+			</button>
+			<button type="submit" className="button delete-button">
+				Compartir!
+			</button>
+		</div>
 	) : (
 		<button type="submit" className="button add-button">
 			Confirmar Dia 1
@@ -46,11 +55,8 @@ const Button = ({ isStage2 }) => {
 	);
 };
 
-const reset = () => document.getElementById("form")?.reset();
-
-const CrForm = ({ bands, isStage2, onSubmit }) => {
+const CrForm = ({ bands, isStage2, onSubmit, goBack }) => {
 	if (!!!bands) return;
-	reset();
 	return (
 		<div>
 			<Formik
@@ -64,14 +70,14 @@ const CrForm = ({ bands, isStage2, onSubmit }) => {
 							{isStage2 ? (
 								<button
 									type="submit"
-									className="button delete-button"
+									className="button static-button"
 								>
 									Día 2
 								</button>
 							) : (
 								<button
 									type="submit"
-									className="button delete-button"
+									className="button static-button"
 								>
 									Día 1
 								</button>
@@ -86,7 +92,7 @@ const CrForm = ({ bands, isStage2, onSubmit }) => {
 										/>
 									))}
 								</div>
-								<Button isStage2={isStage2} />
+								<Button isStage2={isStage2} goBack={goBack} />
 							</Form>
 						</div>
 					);
