@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
 import CrForm from "../Form/Form";
-import file1 from "../../resources/cr23_day_1.json";
-import file2 from "../../resources/cr23_day_2.json";
+import file1 from "../../assets/resources/cr23_day_1.json";
+import file2 from "../../assets/resources/cr23_day_2.json";
 import sortHoursDescending from "../../utils/orderHours";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -56,7 +56,7 @@ function App() {
 
 	const getFormatedText = (arr) => {
 		return sortHoursDescending(arr).reduce((acc, item) => {
-			return acc + item.start + " - " + item.band + "\n";
+			return acc + item.start + " - " + item.band + " | " + item.stage + "\n";
 		}, "");
 	};
 

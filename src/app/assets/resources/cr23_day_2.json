@@ -1,0 +1,284 @@
+{
+    "Norte": [
+        {
+            "start": "00:40",
+            "band": "LAS PELOTAS",        
+            "stage": "Norte"
+        },
+        {
+            "start": "23:10",
+            "band": "LA VELA PUERCA",        
+            "stage": "Norte"
+        },
+        {
+            "start": "20:55",
+            "band": "CIRO Y LOS PERSAS",        
+            "stage": "Norte"
+        },
+        {
+            "start": "19:20",
+            "band": "LAS PASTILLAS DEL ABUELO",        
+            "stage": "Norte"
+        },
+        {
+            "start": "18:00",
+            "band": "CARAS EXTRAÑAS",        
+            "stage": "Norte"
+        },
+        {
+            "start": "17:00",
+            "band": "EL PLAN DE LA MARIPOSA",        
+            "stage": "Norte"
+        },
+        {
+            "start": "16:10",
+            "band": "CRUZANDO EL CHARCO",        
+            "stage": "Norte"
+        },
+        {
+            "start": "15:20",
+            "band": "JÓVENES PORDIOSEROS",        
+            "stage": "Norte"
+        },
+        {
+            "start": "14:30",
+            "band": "EL VUELTO",
+            "stage": "Norte"
+        }
+    ],
+    "Sur": [
+        {
+            "start": "23:00",
+            "band": "CA7RIEL Y PACO AMOROSO",        
+            "stage": "Sur"
+        },
+        {
+            "start": "21:40",
+            "band": "DILLOM",        
+            "stage": "Sur"
+        },
+        {
+            "start": "20:20",
+            "band": "AIRBAG",        
+            "stage": "Sur"
+        },
+        {
+            "start": "18:25",
+            "band": "FITO PAEZ",        
+            "stage": "Sur"
+        },
+        {
+            "start": "17:10",
+            "band": "VETUSTA MORLA",        
+            "stage": "Sur"
+        },
+        {
+            "start": "16:20",
+            "band": "SILVESTRE Y LA NARANJA",        
+            "stage": "Sur"
+        },
+        {
+            "start": "15:30",
+            "band": "PAZ CARRARA",
+            "stage": "Sur"
+        }
+    ],
+    "Montaña": [
+        {
+            "start": "00:50",
+            "band": "TIËSTO",        
+            "stage": "Montaña"
+        },
+        {
+            "start": "23:00",
+            "band": "BABASONICOS",        
+            "stage": "Montaña"
+        },
+        {
+            "start": "21:30",
+            "band": "MONSIEUR PERINÉ",        
+            "stage": "Montaña"
+        },
+        {
+            "start": "19:50",
+            "band": "BANDALOS CHINOS",        
+            "stage": "Montaña"
+        },
+        {
+            "start": "18:30",
+            "band": "PECES RAROS",        
+            "stage": "Montaña"
+        },
+        {
+            "start": "17:40",
+            "band": "MANU MARTINEZ",        
+            "stage": "Montaña"
+        },
+        {
+            "start": "17:00",
+            "band": "AGUSTINA GIOVIO",
+            "stage": "Montaña"
+        }
+    ],
+    "Boomerang": [
+        {
+            "start": "00:30",
+            "band": "POLENTA",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "23:25",
+            "band": "MUERDO",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "22:15",
+            "band": "LISANDRO ARISTIMUÑO",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "21:15",
+            "band": "FELI COLINA",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "20:15",
+            "band": "EMMANUEL HORVILLEUR",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "19:25",
+            "band": "1915",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "18:35",
+            "band": "EL ZAR",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "17:50",
+            "band": "ZENÓN PEREYRA",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "17:05",
+            "band": "MIA ZETA",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "16:20",
+            "band": "ANYI",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "15:40",
+            "band": "CATA RAYBAUD",        
+            "stage": "Boomerang"
+        },
+        {
+            "start": "15:00",
+            "band": "ODIOS COMPARTIDOS",
+            "stage": "Boomerang"
+        }
+    ],
+    "Casita de Blues": [
+        {
+            "start": "23:20",
+            "band": "JJ THAMES",        
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "22:00",
+            "band": "NANDA MOURA & TOYO",        
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "20:30",
+            "band": "CORAL",        
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "19:20",
+            "band": "LOS MASONES",        
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "17:50",
+            "band": "THE RHYTHM GAMBLERS",        
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "16:30",
+            "band": "29 CAMINOS BLUES",        
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "15:30",
+            "band": "GLORIA AGUILAR Y CRUXADOS",        
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "14:30",
+            "band": "ESCORPIA",
+            "stage": "Casita de Blues"
+        }
+    ],
+    "Paraguay": [
+        {
+            "start": "02:10",
+            "band": "FIESTA KATANA",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "01:00",
+            "band": "MS. NINA (ESPAÑA)",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "00:00",
+            "band": "TAICHU",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "22:40",
+            "band": "EL DOCTOR",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "21:10",
+            "band": "SOFIA GABANNA",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "19:50",
+            "band": "INTENDENTE",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "18:30",
+            "band": "CRÁNEO & LASSER (ESPAÑA)",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "17:10",
+            "band": "RONPE 99",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "16:00",
+            "band": "THE COLORATED",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "15:00",
+            "band": "SANTOZ",        
+            "stage": "Paraguay"
+        },
+        {
+            "start": "14:00",
+            "band": "CALIOPE FAMILY",
+            "stage": "Paraguay"
+        }
+    ]
+}

@@ -1,0 +1,299 @@
+{
+    "Norte": [
+        {
+            "start": "00:30",
+            "band": "JUANSE",
+            "stage": "Norte"
+        },
+        {
+            "start": "22:30",
+            "band": "DIVIDIDOS",
+            "stage": "Norte"
+        },
+        {
+            "start": "21:00",
+            "band": "SKAY Y LOS FAKIRES",
+            "stage": "Norte"
+        },
+        {
+            "start": "19:00",
+            "band": "NOTE VA GUSTAR",
+            "stage": "Norte"
+        },
+        {
+            "start": "17:30",
+            "band": "GUASONES",
+            "stage": "Norte"
+        },
+        {
+            "start": "16:30",
+            "band": "OJOS LOCOS",
+            "stage": "Norte"
+        },
+        {
+            "start": "15:40",
+            "band": "LA CHANCHA MUDA",
+            "stage": "Norte"
+        },
+        {
+            "start": "15:00",
+            "band": "EL BORDO",
+            "stage": "Norte"
+        },
+        {
+            "start": "14:20",
+            "band": "FAROLITOS",
+            "stage": "Norte"
+        }
+    ],
+    "Sur": [
+        {
+            "start": "00:25",
+            "band": "JUAN INGARAMO",
+            "stage": "Sur"
+        },
+        {
+            "start": "23:00",
+            "band": "TURF",
+            "stage": "Sur"
+        },
+        {
+            "start": "21:40",
+            "band": "TRUENO",
+            "stage": "Sur"
+        },
+        {
+            "start": "20:15",
+            "band": "RELS B",
+            "stage": "Sur"
+        },
+        {
+            "start": "19:05",
+            "band": "CONOCIENDO RUSIA",
+            "stage": "Sur"
+        },
+        {
+            "start": "18:00",
+            "band": "ALEMÁN",
+            "stage": "Sur"
+        },
+        {
+            "start": "17:00",
+            "band": "ZEBALLOS",
+            "stage": "Sur"
+        },
+        {
+            "start": "16:10",
+            "band": "DLD",
+            "stage": "Sur"
+        },
+        {
+            "start": "15:20",
+            "band": "LARA 91K",
+            "stage": "Sur"
+        },
+        {
+            "start": "14:30",
+            "band": "SYNÓPSIS",
+            "stage": "Sur"
+        }
+    ],
+    "Montaña": [
+        {
+            "start": "02:30",
+            "band": "CHARLOTTE DE WITTE",
+            "stage": "Montaña"
+        },
+        {
+            "start": "01:20",
+            "band": "ENRICO SANGIULIANO",
+            "stage": "Montaña"
+        },
+        {
+            "start": "00:30",
+            "band": "NICOLAS TABOADA",
+            "stage": "Montaña"
+        },
+        {
+            "start": "23:40",
+            "band": "VESICA PISCIS",
+            "stage": "Montaña"
+        },
+        {
+            "start": "22:15",
+            "band": "CATUPECU MACHU",
+            "stage": "Montaña"
+        },
+        {
+            "start": "21:00",
+            "band": "LP",
+            "stage": "Montaña"
+        },
+        {
+            "start": "19:40",
+            "band": "LA DELIO VALDÉZ",
+            "stage": "Montaña"
+        },
+        {
+            "start": "18:20",
+            "band": "USTED SEÑALEMELO",
+            "stage": "Montaña"
+        },
+        {
+            "start": "17:10",
+            "band": "ESTELARES",
+            "stage": "Montaña"
+        }
+    ],
+    "Boomerang": [
+        {
+            "start": "00:45",
+            "band": "GATIVIDEO",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "23:35",
+            "band": "RUSOWSKY",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "22:25",
+            "band": "SARAMALACARA",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "21:25",
+            "band": "MUEREJOVEN",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "20:25",
+            "band": "GAUCHITO CLUB",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "19:35",
+            "band": "ODD MAMI",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "18:45",
+            "band": "FERMÍN",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "17:55",
+            "band": "JOVEN BREAKFAST",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "17:10",
+            "band": "ILAN AMORES",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "16:25",
+            "band": "BAD",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "15:40",
+            "band": "LETIZIA VOCOS",
+            "stage": "Boomerang"
+        },
+        {
+            "start": "15:00",
+            "band": "JON DECA",
+            "stage": "Boomerang"
+        }
+    ],
+    "Casita de Blues": [
+        {
+            "start": "23:50",
+            "band": "JOANNA MADDOX",
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "22:30",
+            "band": "DON VILANOVA & SOUL BROS",
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "20:50",
+            "band": "DEBORAH DIXON",
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "18:40",
+            "band": "THE GINGER HEARTS",
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "17:30",
+            "band": "LOS BÚFALOS SEDIENTOS",
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "16:30",
+            "band": "WAYRA IGLESIAS",
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "15:30",
+            "band": "VIEJO MOTOR",
+            "stage": "Casita de Blues"
+        },
+        {
+            "start": "14:30",
+            "band": "GRETA KOHAN",
+            "stage": "Casita de Blues"
+        }
+    ],
+    "Paraguay": [
+        {
+            "start": "01:40",
+            "band": "FIESTA BRESH",
+            "stage": "Paraguay"
+        },
+        {
+            "start": "00:10",
+            "band": "KOINO YOKAN",
+            "stage": "Paraguay"
+        },
+        {
+            "start": "22:50",
+            "band": "MI AMIGO INVENCIBLE",
+            "stage": "Paraguay"
+        },
+        {
+            "start": "21:30",
+            "band": "EL MATÓ A UN POLICÍA MOTORIZADO",
+            "stage": "Paraguay"
+        },
+        {
+            "start": "20:10",
+            "band": "LILA DOWNS (MEXICO)",
+            "stage": "Paraguay"
+        },
+        {
+            "start": "19:10",
+            "band": "LAS LIGAS MENORES",
+            "stage": "Paraguay"
+        },
+        {
+            "start": "18:00",
+            "band": "RAYOS LASER",
+            "stage": "Paraguay"
+        },
+        {
+            "start": "17:00",
+            "band": "CLARA CAVA",
+            "stage": "Paraguay"
+        },
+        {
+            "start": "16:00",
+            "band": "LOS HERMANOS MORGAN",
+            "stage": "Paraguay"
+        }
+    ]
+}
