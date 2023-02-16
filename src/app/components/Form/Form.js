@@ -58,7 +58,7 @@ const Button = ({ isStage2, goBack }) => {
 const CrForm = ({ bands, isStage2, onSubmit, goBack }) => {
 	if (!!!bands) return;
 	return (
-		<div>
+		<div className="form-layout">
 			<Formik
 				initialValues={getInitialValues(bands)}
 				onSubmit={onSubmit}
