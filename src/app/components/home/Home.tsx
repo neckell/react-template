@@ -3,9 +3,32 @@ import "./Home.css"
 import { FC } from "react"
 
 import logo from "../../assets/images/vite.svg"
+import { Show, useGetAssetsByDayQuery } from "../../services/baseApi"
 import Counter from "../counter/Counter"
 
+interface ListShowProps {
+  show: Show
+}
+
+const ListShow = ({ show }: ListShowProps) => (
+  <div>
+    {show.band}
+    <br />
+    <br />
+    {show.stage}
+    <br />
+    <br />
+    {show.start}
+    <br />
+    <br />
+  </div>
+)
+
 const Home: FC = () => {
+  // Using a query hook automatically fetches data and returns query values
+  const { data, error, isLoading } = useGetAssetsByDayQuery("1")
+  // Individual hooks are also accessible under the generated endpoints:
+  // const { data, error, isLoading } = pokemonApi.endpoints.getPokemonByName.useQuery('bulbasaur')
   return (
     <div className="App">
       <header className="App-header">
@@ -53,8 +76,22 @@ const Home: FC = () => {
           </a>
         </span>
       </header>
+      <div className="App">
+        {error != null ? (
+          <>Oh no, there was an error</>
+        ) : isLoading ? (
+          <>Loading...</>
+        ) : data != null ? (
+          <>
+            {Object.values(data).map((scenario: Show[]) => {
+              return scenario.map((show: Show) => (
+                <ListShow key={show.band} show={show} />
+              ))
+            })}
+          </>
+        ) : null}
+      </div>
     </div>
   )
 }
-
 export default Home
