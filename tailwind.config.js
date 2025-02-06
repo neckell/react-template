@@ -12,9 +12,20 @@ module.exports = {
         'ct-error-2': '#b93f3f',
         'ct-error-3': '#ff7a7a'
       },
-      // fontFamily: {
-      //   Poppins: ['Poppins, sans-serif'],
-      // },
+      animation: {
+        'fade-in': 'fadeIn 1.5s ease-in-out',
+        'bounce': 'bounce 2s infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        bounce: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(10px)' },
+        }
+      },
       container: {
         center: true,
         padding: '1rem',
