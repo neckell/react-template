@@ -367,16 +367,14 @@ const MainSelector: FC = () => {
               exit={{ y: "100%" }}
               transition={{ type: "spring", damping: 20 }}
               drag="y"
-              dragDirectionLock
-              dragConstraints={{ top: 0, bottom: 0 }}
+              dragConstraints={{ top: 0 }}
               dragElastic={0.2}
-              dragMomentum={false}
               onDragEnd={(_, info) => {
-                if (info.offset.y > 50) {
+                if (info.offset.y > 100) {
                   setIsBottomSheetOpen(false);
                 }
               }}
-              className="lg:hidden fixed bottom-0 left-0 right-0 bg-base-100 rounded-t-2xl p-4 z-50 max-h-[60vh] overflow-y-auto overscroll-contain touch-pan-y"
+              className="lg:hidden fixed bottom-0 left-0 right-0 bg-base-100 rounded-t-2xl p-4 z-50 max-h-[60vh] overflow-y-auto"
             >
               <motion.div 
                 className="w-12 h-1.5 bg-base-content/20 mx-auto rounded-full mb-4 cursor-grab active:cursor-grabbing"
@@ -388,7 +386,7 @@ const MainSelector: FC = () => {
                   duration: 0.2
                 }}
               />
-              <div className="p-4 pt-0 space-y-4">
+              <div className="space-y-4">
                 <h2 className="text-xl font-bold">
                   Mi Grilla - Día {selectedDay}{" "}
                   {selectedDay === 1 &&
