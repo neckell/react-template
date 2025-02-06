@@ -15,7 +15,7 @@ const Header: FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-neutral backdrop-blur-sm shadow-lg p-4 hover:shadow-xl transition-all duration-300">
       <div className="flex items-center justify-between gap-3">
-        <span className="w-12 h-12">
+        <span className="w-16 h-auto">
           <img
             src={logoUrl}
             alt="Logo"
