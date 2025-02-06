@@ -19,7 +19,7 @@ interface SortedArtists {
   day2Artists: SelectedArtist[]
 }
 
-const Main: FC = () => {
+const MainSelector: FC = () => {
   const [selectedDay, setSelectedDay] = useState<1 | 2>(1)
   const [selectedArtists, setSelectedArtists] = useState<
     Map<string, SelectedArtist>
@@ -361,4 +361,4 @@ const Main: FC = () => {
   )
 }
 
-export default Main
+export default MainSelector

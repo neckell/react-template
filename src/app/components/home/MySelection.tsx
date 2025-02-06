@@ -4,10 +4,10 @@ import {
   TrashIcon,
 } from "@heroicons/react/24/outline"
 import { FC, useMemo, useState } from "react"
-import { Button } from "../daisy"
-import { normalizeTime } from "./common"
 import { useMediaQuery } from "react-responsive"
 import { breakpoints } from "../../constants/breakpoints"
+import { Button } from "../daisy"
+import { normalizeTime } from "./common"
 
 export interface SelectedArtist {
   id: string
@@ -199,7 +199,8 @@ export const MySelection: FC<MySelectionProps> = ({
           : formatDayScheduleByTime(day2Artists)
     }
 
-    message += "\n🔗 Armá tu grilla en: https://cr2025.vercel.app"
+    message +=
+      "\n🔗 Armá tu grilla en: https://arma-tu-grilla-cr2025.vercel.app/"
 
     return message
   }
@@ -240,7 +241,9 @@ export const MySelection: FC<MySelectionProps> = ({
   return (
     <div className="bg-base-200 rounded-lg p-6">
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold w-full sm:w-auto mb-4 sm:mb-0">Mi Selección</h2>
+        <h2 className="text-2xl font-bold w-full sm:w-auto mb-4 sm:mb-0">
+          Mi Selección
+        </h2>
         <div className="flex items-center gap-4">
           <div className="join">
             <Button
