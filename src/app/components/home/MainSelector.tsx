@@ -1,8 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion"
-import { FC, useMemo, useState } from "react"
+import { FC, useEffect, useMemo, useState } from "react"
 import { useMediaQuery } from "react-responsive"
 
-import { ArrowLeftCircleIcon, TrashIcon } from "@heroicons/react/24/outline"
+import {
+  ArrowLeftCircleIcon,
+  ArrowUpCircleIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline"
 import {
   Band,
   DaySchedule as DayScheduleType,
@@ -27,12 +31,26 @@ const MainSelector: FC = () => {
   const [currentStep, setCurrentStep] = useState<"selection" | "mySelection">(
     "selection",
   )
+  const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false)
+  const [showScrollTop, setShowScrollTop] = useState(false)
 
   const day1Schedule = loadDaySchedule(1)
   const day2Schedule = loadDaySchedule(2)
 
-  const isMobile = useMediaQuery({ maxWidth: breakpoints.lg })
-  const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false)
+  const isMobile = useMediaQuery({ query: breakpoints.lg })
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 200)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   const handleArtistToggle = (band: Band, stage: string) => {
     setSelectedArtists(prev => {
@@ -55,6 +73,10 @@ const MainSelector: FC = () => {
     const newSelectedArtists = new Map(selectedArtists)
     newSelectedArtists.delete(id)
     setSelectedArtists(newSelectedArtists)
+  }
+
+  const handleClearAll = () => {
+    setSelectedArtists(new Map())
   }
 
   const getArtistsByDay = (
@@ -146,15 +168,214 @@ const MainSelector: FC = () => {
   }
 
   return (
-    <main className="flex-1 pt-20 px-4 pb-24 lg:pb-4 mt-6">
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Desktop Sidebar */}
-          {currentStep === "selection" && (
-            <div className="hidden lg:block lg:w-1/4 lg:sticky lg:top-24 h-fit">
-              <div className="p-4 bg-secondary rounded-lg">
-                <h2 className="text-xl font-bold mb-4">
-                  Mi Grilla{" "}
+    <>
+      <main className="flex-1 pt-20 px-4 pb-24 lg:pb-4 mt-6">
+        <div className="container mx-auto">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Desktop Sidebar */}
+            {currentStep === "selection" && (
+              <div className="hidden lg:block lg:w-1/4 lg:sticky lg:top-24 h-fit">
+                <div className="p-4 bg-secondary rounded-lg">
+                  <h2 className="text-xl font-bold mb-4">
+                    Mi Grilla{" "}
+                    {selectedDay === 1 &&
+                    sortedArtistsByDay.day1Artists.length > 0
+                      ? `(${sortedArtistsByDay.day1Artists.length})`
+                      : selectedDay === 2 &&
+                          sortedArtistsByDay.day2Artists.length > 0
+                        ? `(${sortedArtistsByDay.day2Artists.length})`
+                        : ""}
+                  </h2>
+                  <div className="space-y-2">
+                    {(selectedDay === 1
+                      ? sortedArtistsByDay.day1Artists
+                      : sortedArtistsByDay.day2Artists
+                    )
+                      .sort(
+                        (a, b) => normalizeTime(a.time) - normalizeTime(b.time),
+                      )
+                      .map(artist => (
+                        <div
+                          key={artist.id}
+                          className="flex items-center justify-between p-2 bg-base-100 rounded"
+                        >
+                          <div>
+                            <div className="font-medium">{artist.name}</div>
+                            <div className="text-sm opacity-70">
+                              {artist.time}hs · {artist.stage}
+                            </div>
+                          </div>
+                          <button
+                            onClick={() => handleArtistDelete(artist.id)}
+                            className="btn btn-ghost btn-sm"
+                            title="Eliminar artista"
+                          >
+                            <TrashIcon className="w-4" />
+                          </button>
+                        </div>
+                      ))}
+                    {(selectedDay === 1
+                      ? sortedArtistsByDay.day1Artists.length === 0
+                      : sortedArtistsByDay.day2Artists.length === 0) && (
+                      <p className="text-sm opacity-70">
+                        No hay artistas seleccionados para este día
+                      </p>
+                    )}
+                  </div>
+                  {selectedArtists.size > 0 && (
+                    <Button
+                      color="error"
+                      size="sm"
+                      className="mt-4 w-full"
+                      onClick={handleClearAll}
+                    >
+                      <TrashIcon className="w-4 h-4 me-2" />
+                      Borrar selección
+                    </Button>
+                  )}
+                </div>
+              </div>
+            )}
+
+            <div className="flex-1">
+              <AnimatePresence mode="wait">
+                {currentStep === "selection" ? (
+                  <motion.div
+                    key="selection"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-8">
+                        <div className="join">
+                          <Button
+                            className={`join-item ${selectedDay === 1 && "btn-active"}`}
+                            onClick={() => setSelectedDay(1)}
+                          >
+                            Día 1
+                          </Button>
+                          <Button
+                            className={`join-item ${selectedDay === 2 && "btn-active"}`}
+                            onClick={() => setSelectedDay(2)}
+                          >
+                            Día 2
+                          </Button>
+                        </div>
+                        {!isMobile && (
+                          <Button
+                            color="primary"
+                            onClick={() => setCurrentStep("mySelection")}
+                          >
+                            Ver Mi Selección →
+                          </Button>
+                        )}
+                      </div>
+                      <DaySection
+                        dayNumber={selectedDay}
+                        schedule={
+                          selectedDay === 1 ? day1Schedule : day2Schedule
+                        }
+                        stages={getStages(
+                          selectedDay === 1 ? day1Schedule : day2Schedule,
+                        )}
+                      />
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="mySelection"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  >
+                    <div className="flex items-center justify-between mb-4">
+                      <Button
+                        color="ghost"
+                        onClick={() => setCurrentStep("selection")}
+                      >
+                        <ArrowLeftCircleIcon className="w-5 h-5 mr-1" />
+                        Volver
+                      </Button>
+                    </div>
+                    <MySelection
+                      day1Artists={sortedArtistsByDay.day1Artists}
+                      day2Artists={sortedArtistsByDay.day2Artists}
+                      selectedArtists={selectedArtists}
+                      onDelete={handleArtistDelete}
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Mobile Floating Buttons */}
+            {isMobile && (
+              <motion.button
+                className={`lg:hidden fixed bottom-6 left-6 btn btn-circle btn-primary btn-lg shadow-lg 
+                  ${(isBottomSheetOpen || currentStep === "mySelection") && "hidden"}`}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setIsBottomSheetOpen(true)}
+              >
+                {selectedArtists.size}
+              </motion.button>
+            )}
+          </div>
+        </div>
+      </main>
+
+      {/* Mobile FAB */}
+
+      <motion.button
+        className={`lg:hidden fixed bottom-6 left-6 btn btn-circle btn-primary btn-lg shadow-lg z-[100]
+            ${(isBottomSheetOpen || currentStep === "mySelection") && "hidden"}`}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => setIsBottomSheetOpen(true)}
+      >
+        {selectedArtists.size}
+      </motion.button>
+
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 z-[100] p-2 rounded-full 
+            bg-primary text-primary-content shadow-lg hover:bg-primary-focus transition-colors duration-200"
+            aria-label="Scroll to top"
+          >
+            <ArrowUpCircleIcon className="w-8" />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Bottom Sheet */}
+      <AnimatePresence>
+        {isBottomSheetOpen && currentStep !== "mySelection" && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="lg:hidden fixed inset-0 bg-black/50 z-40"
+              onClick={() => setIsBottomSheetOpen(false)}
+            />
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
+              transition={{ type: "spring", damping: 20 }}
+              className="lg:hidden fixed bottom-0 left-0 right-0 bg-base-100 rounded-t-2xl p-4 z-50 max-h-[80vh] overflow-y-auto"
+            >
+              <div className="w-12 h-1.5 bg-base-content/20 mx-auto rounded-full mb-4" />
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold">
+                  Mi Grilla - Dia {selectedDay}{" "}
                   {selectedDay === 1 &&
                   sortedArtistsByDay.day1Artists.length > 0
                     ? `(${sortedArtistsByDay.day1Artists.length})`
@@ -174,7 +395,7 @@ const MainSelector: FC = () => {
                     .map(artist => (
                       <div
                         key={artist.id}
-                        className="flex items-center justify-between p-2 bg-base-100 rounded"
+                        className="flex items-center justify-between p-2 bg-base-200 rounded"
                       >
                         <div>
                           <div className="font-medium">{artist.name}</div>
@@ -199,165 +420,22 @@ const MainSelector: FC = () => {
                     </p>
                   )}
                 </div>
+                {selectedArtists.size > 0 && (
+                  <Button
+                    color="error"
+                    size="sm"
+                    className="w-full"
+                    onClick={handleClearAll}
+                  >
+                    Limpiar Todo
+                  </Button>
+                )}
               </div>
-            </div>
-          )}
-
-          {/* Mobile Bottom Sheet */}
-          <AnimatePresence>
-            {isBottomSheetOpen && currentStep !== "mySelection" && (
-              <>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="lg:hidden fixed inset-0 bg-black/50 z-40"
-                  onClick={() => setIsBottomSheetOpen(false)}
-                />
-                <motion.div
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  exit={{ y: "100%" }}
-                  transition={{ type: "spring", damping: 20 }}
-                  className="lg:hidden fixed bottom-0 left-0 right-0 bg-base-100 rounded-t-2xl p-4 z-50 max-h-[80vh] overflow-y-auto"
-                >
-                  <div className="w-12 h-1.5 bg-base-content/20 mx-auto rounded-full mb-4" />
-                  <div className="space-y-4">
-                    <h2 className="text-xl font-bold">
-                      Mi Grilla - Dia {selectedDay}{" "}
-                      {selectedDay === 1 &&
-                      sortedArtistsByDay.day1Artists.length > 0
-                        ? `(${sortedArtistsByDay.day1Artists.length})`
-                        : selectedDay === 2 &&
-                            sortedArtistsByDay.day2Artists.length > 0
-                          ? `(${sortedArtistsByDay.day2Artists.length})`
-                          : ""}
-                    </h2>
-                    <div className="space-y-2">
-                      {(selectedDay === 1
-                        ? sortedArtistsByDay.day1Artists
-                        : sortedArtistsByDay.day2Artists
-                      )
-                        .sort(
-                          (a, b) =>
-                            normalizeTime(a.time) - normalizeTime(b.time),
-                        )
-                        .map(artist => (
-                          <div
-                            key={artist.id}
-                            className="flex items-center justify-between p-2 bg-base-200 rounded"
-                          >
-                            <div>
-                              <div className="font-medium">{artist.name}</div>
-                              <div className="text-sm opacity-70">
-                                {artist.time}hs · {artist.stage}
-                              </div>
-                            </div>
-                            <button
-                              onClick={() => handleArtistDelete(artist.id)}
-                              className="btn btn-ghost btn-sm"
-                              title="Eliminar artista"
-                            >
-                              <TrashIcon className="w-4" />
-                            </button>
-                          </div>
-                        ))}
-                      {(selectedDay === 1
-                        ? sortedArtistsByDay.day1Artists.length === 0
-                        : sortedArtistsByDay.day2Artists.length === 0) && (
-                        <p className="text-sm opacity-70">
-                          No hay artistas seleccionados para este día
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              </>
-            )}
-          </AnimatePresence>
-
-          <div className="flex-1">
-            <AnimatePresence mode="wait">
-              {currentStep === "selection" ? (
-                <motion.div
-                  key="selection"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-8">
-                      <div className="join">
-                        <Button
-                          className={`join-item ${selectedDay === 1 && "btn-active"}`}
-                          onClick={() => setSelectedDay(1)}
-                        >
-                          Día 1
-                        </Button>
-                        <Button
-                          className={`join-item ${selectedDay === 2 && "btn-active"}`}
-                          onClick={() => setSelectedDay(2)}
-                        >
-                          Día 2
-                        </Button>
-                      </div>
-                      <Button
-                        color="primary"
-                        onClick={() => setCurrentStep("mySelection")}
-                      >
-                        Ver Mi Selección →
-                      </Button>
-                    </div>
-                    <DaySection
-                      dayNumber={selectedDay}
-                      schedule={selectedDay === 1 ? day1Schedule : day2Schedule}
-                      stages={getStages(
-                        selectedDay === 1 ? day1Schedule : day2Schedule,
-                      )}
-                    />
-                  </div>
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="mySelection"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <Button
-                      color="ghost"
-                      onClick={() => setCurrentStep("selection")}
-                    >
-                      <ArrowLeftCircleIcon className="w-5 h-5 mr-1" />
-                      Volver
-                    </Button>
-                  </div>
-                  <MySelection
-                    day1Artists={sortedArtistsByDay.day1Artists}
-                    day2Artists={sortedArtistsByDay.day2Artists}
-                    selectedArtists={selectedArtists}
-                    onDelete={handleArtistDelete}
-                  />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Mobile FAB */}
-          <motion.button
-            className={`lg:hidden fixed bottom-6 right-6 btn btn-circle btn-primary btn-lg shadow-lg 
-              ${(isBottomSheetOpen || currentStep === "mySelection") && "hidden"}`}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIsBottomSheetOpen(true)}
-          >
-            {selectedArtists.size}
-          </motion.button>
-        </div>
-      </div>
-    </main>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
