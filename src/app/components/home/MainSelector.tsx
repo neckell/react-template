@@ -310,18 +310,6 @@ const MainSelector: FC = () => {
                 )}
               </AnimatePresence>
             </div>
-
-            {/* Mobile Floating Buttons */}
-            {isMobile && (
-              <motion.button
-                className={`lg:hidden fixed bottom-6 left-6 btn btn-circle btn-primary btn-lg shadow-lg 
-                  ${(isBottomSheetOpen || currentStep === "mySelection") && "hidden"}`}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setIsBottomSheetOpen(true)}
-              >
-                {selectedArtists.size}
-              </motion.button>
-            )}
           </div>
         </div>
       </main>
@@ -329,7 +317,7 @@ const MainSelector: FC = () => {
       {/* Mobile FAB */}
 
       <motion.button
-        className={`lg:hidden fixed bottom-6 left-6 btn btn-circle btn-primary btn-lg shadow-lg z-[100]
+        className={`lg:hidden fixed top-28 right-6 btn btn-circle btn-primary btn-lg shadow-lg z-[100]
             ${(isBottomSheetOpen || currentStep === "mySelection") && "hidden"}`}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsBottomSheetOpen(true)}
@@ -345,8 +333,8 @@ const MainSelector: FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-[100] p-2 rounded-full 
-            bg-primary text-primary-content shadow-lg hover:bg-primary-focus transition-colors duration-200"
+            className={`fixed ${isMobile ? "left-6" : "right-6"} bottom-6 z-[100] p-2 rounded-full 
+            bg-primary text-primary-content shadow-lg hover:bg-primary-focus transition-colors duration-200`}
             aria-label="Scroll to top"
           >
             <ArrowUpCircleIcon className="w-8" />
