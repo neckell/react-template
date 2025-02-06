@@ -1,60 +1,60 @@
 {
   "Escenario Norte": [
-    {"band": "K4", "time": "14.30"},
-    {"band": "AgusFortnite2008 & Stiffy", "time": "15.30"},
-    {"band": "Bhavi", "time": "16.30"},
-    {"band": "Ca7riel y Paco Amoroso", "time": "17.50"},
-    {"band": "Nicki Nicole", "time": "19.40"},
-    {"band": "La Delio Valdez", "time": "21.00"},
-    {"band": "Nafta", "time": "23.00"},
-    {"band": "Luck Ra", "time": "00.00"}
+    { "band": "K4", "time": "14:30" },
+    { "band": "AgusFortnite2008 & Stiffy", "time": "15:30" },
+    { "band": "Bhavi", "time": "16:30" },
+    { "band": "Ca7riel y Paco Amoroso", "time": "17:50" },
+    { "band": "Nicki Nicole", "time": "19:40" },
+    { "band": "La Delio Valdez", "time": "21:00" },
+    { "band": "Nafta", "time": "23:00" },
+    { "band": "Luck Ra", "time": "00:00" }
   ],
   "Escenario Sur": [
-    {"band": "Daniela Milagro", "time": "14.30"},
-    {"band": "Wayra Iglesias", "time": "15.30"},
-    {"band": "La Chancha Muda", "time": "16.30"},
-    {"band": "Ale Kurz", "time": "17.50"},
-    {"band": "Las Pelotas", "time": "19.10"},
-    {"band": "Skay y los Fakires", "time": "20.30"},
-    {"band": "Los Piojos", "time": "22.00"}
+    { "band": "Daniela Milagro", "time": "14:30" },
+    { "band": "Wayra Iglesias", "time": "15:30" },
+    { "band": "La Chancha Muda", "time": "16:30" },
+    { "band": "Ale Kurz", "time": "17:50" },
+    { "band": "Las Pelotas", "time": "19:10" },
+    { "band": "Skay y los Fakires", "time": "20:30" },
+    { "band": "Los Piojos", "time": "22:00" }
   ],
   "Escenario de Montaña": [
-    {"band": "Genitallica", "time": "14.30"},
-    {"band": "Blair", "time": "15.50"},
-    {"band": "Silvestre y La Naranja", "time": "17.10"},
-    {"band": "Bandalos Chinos", "time": "18.40"},
-    {"band": "Deadmau5", "time": "20.40"},
-    {"band": "Juan Hansen Live", "time": "23.10"},
-    {"band": "Peces Raros", "time": "00.20"}
+    { "band": "Genitallica", "time": "14:30" },
+    { "band": "Blair", "time": "15:50" },
+    { "band": "Silvestre y La Naranja", "time": "17:10" },
+    { "band": "Bandalos Chinos", "time": "18:40" },
+    { "band": "Deadmau5", "time": "20:40" },
+    { "band": "Juan Hansen Live", "time": "23:10" },
+    { "band": "Peces Raros", "time": "00:20" }
   ],
   "Escenario Paraguay": [
-    {"band": "Fonso y las Paritarias", "time": "14.20"},
-    {"band": "Lara 91K", "time": "15.10"},
-    {"band": "Manu Martínez", "time": "16.00"},
-    {"band": "Javiera Mena", "time": "16.50"},
-    {"band": "Zoe Gotusso", "time": "18.00"},
-    {"band": "Vapors of Morphine", "time": "19.00"},
-    {"band": "Massacre", "time": "20.10"},
-    {"band": "Winona Ryders", "time": "21.30"},
-    {"band": "Rosa Profunda", "time": "22.30"},
-    {"band": "Hijo de la Tormenta", "time": "23.30"}
+    { "band": "Fonso y las Paritarias", "time": "14:20" },
+    { "band": "Lara 91K", "time": "15:10" },
+    { "band": "Manu Martínez", "time": "16:00" },
+    { "band": "Javiera Mena", "time": "16:50" },
+    { "band": "Zoe Gotusso", "time": "18:00" },
+    { "band": "Vapors of Morphine", "time": "19:00" },
+    { "band": "Massacre", "time": "20:10" },
+    { "band": "Winona Ryders", "time": "21:30" },
+    { "band": "Rosa Profunda", "time": "22:30" },
+    { "band": "Hijo de la Tormenta", "time": "23:30" }
   ],
   "La Casita del Blues": [
-    {"band": "Papi Chimi Promero & Brossoul", "time": "14.30"},
-    {"band": "Marlene Suchy & The Super Sax", "time": "15.25"},
-    {"band": "Cindy Coleoni", "time": "16.20"},
-    {"band": "Sol Bassa", "time": "17.25"},
-    {"band": "César Valdomir + Mari Pole + Nico Raffetta", "time": "18.20"},
-    {"band": "The Rhythm Gamblers", "time": "19.25"},
-    {"band": "Piti Fernández", "time": "20.30"},
-    {"band": "Ivan Singh & Sheryl Youngblood", "time": "21.45"},
-    {"band": "Los Búfalos Sedientos", "time": "22.45"}
+    { "band": "Papi Chimi Promero & Brossoul", "time": "14:30" },
+    { "band": "Marlene Suchy & The Super Sax", "time": "15:25" },
+    { "band": "Cindy Coleoni", "time": "16:20" },
+    { "band": "Sol Bassa", "time": "17:25" },
+    { "band": "César Valdomir + Mari Pole + Nico Raffetta", "time": "18:20" },
+    { "band": "The Rhythm Gamblers", "time": "19:25" },
+    { "band": "Piti Fernández", "time": "20:30" },
+    { "band": "Ivan Singh & Sheryl Youngblood", "time": "21:45" },
+    { "band": "Los Búfalos Sedientos", "time": "22:45" }
   ],
   "Hangar Club": [
-    {"band": "Sivinski", "time": "17.00"},
-    {"band": "Maia Dross", "time": "18.00"},
-    {"band": "J Catriel", "time": "19.00"},
-    {"band": "Pampa", "time": "20.00"},
-    {"band": "Sol Ortega", "time": "21.00"}
+    { "band": "Sivinski", "time": "17:00" },
+    { "band": "Maia Dross", "time": "18:00" },
+    { "band": "J Catriel", "time": "19:00" },
+    { "band": "Pampa", "time": "20:00" },
+    { "band": "Sol Ortega", "time": "21:00" }
   ]
 }

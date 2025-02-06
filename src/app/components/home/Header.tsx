@@ -1,12 +1,16 @@
 import MoonIcon from "@heroicons/react/24/outline/MoonIcon"
 import SunIcon from "@heroicons/react/24/outline/SunIcon"
-import { FC } from "react"
+import { FC, useEffect } from "react"
 import { getImageUrl, getLogoImage } from "../../assets/loaders/imagesLoader"
 import useTheme from "../../hooks/useTheme"
 
 const Header: FC = () => {
   const { currentTheme, changeTheme } = useTheme()
   const logoUrl = getImageUrl(getLogoImage())
+
+  useEffect(() => {
+    changeTheme("light")
+  }, [])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-neutral backdrop-blur-sm shadow-lg p-4 hover:shadow-xl transition-all duration-300">
@@ -20,7 +24,9 @@ const Header: FC = () => {
         </span>
         <h1 className="font-semibold text-center text-lg">
           Armá tu Grilla - CR 2025{" "}
-          <span className="sm:inline sm:ml-1 inline-block">15 y 16 de Febrero</span>
+          <span className="sm:inline sm:ml-1 inline-block">
+            15 y 16 de Febrero
+          </span>
         </h1>
         <div className="space-x-10">
           <a className="cursor-pointer">
