@@ -1,0 +1,9 @@
+{
+  "logo": "/images/logo.png",
+  "banner": "/images/banner.jpg",
+  "social": {
+    "instagram": "/images/social/instagram.svg",
+    "facebook": "/images/social/facebook.svg",
+    "twitter": "/images/social/twitter.svg"
+  }
+}
