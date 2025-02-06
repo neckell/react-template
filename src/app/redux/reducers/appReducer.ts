@@ -1,15 +1,14 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 // import axios from 'axios'
-import { API_BASE_URL } from '../../constants/base'
-import { AppState } from './types'
+import { API_BASE_URL } from "../../constants/base"
 
 // interface ModifiedNameResponse {
 //   modifiedName: string
 // }
 
-const initialState: AppState = {
-  name: '',
+const initialState: any = {
+  name: "",
   isLoading: false,
 }
 
@@ -18,28 +17,28 @@ interface BackendResponse {
 }
 
 export const fetchModifiedName = createAsyncThunk(
-  'app/modifyNameAsync',
+  "app/modifyNameAsync",
   async () => {
     const response = await fetch(API_BASE_URL + `/assets?day=1`)
     const data: BackendResponse = await response.json()
     console.log(data)
     return data.message
-  }
+  },
 )
 
 const appSlice = createSlice({
-  name: 'app',
+  name: "app",
   initialState,
   reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(fetchModifiedName.pending, (state) => {
+  extraReducers: builder => {
+    builder.addCase(fetchModifiedName.pending, state => {
       state.isLoading = true
     })
     builder.addCase(fetchModifiedName.fulfilled, (state, action) => {
       state.isLoading = false
-      state.name = 'LOADED'
+      state.name = "LOADED"
     })
-    builder.addCase(fetchModifiedName.rejected, (state) => {
+    builder.addCase(fetchModifiedName.rejected, state => {
       state.isLoading = false
     })
   },
