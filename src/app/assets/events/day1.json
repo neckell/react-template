@@ -1,61 +1,61 @@
 {
   "Escenario Norte": [
-    {"band": "Santi Celli", "time": "14:30"},
-    {"band": "Koino Yokan", "time": "15:20"},
-    {"band": "Hilda canta a Charly", "time": "16:30"},
-    {"band": "El Mató a un Policía Motorizado", "time": "17:50"},
-    {"band": "Divididos", "time": "19:35"},
-    {"band": "Airbag", "time": "21:40"},
-    {"band": "Dillom", "time": "23:10"},
-    {"band": "Los Auténticos Decadentes", "time": "00:40"}
+    { "band": "Santi Celli", "time": "14:30" },
+    { "band": "Koino Yokan", "time": "15:20" },
+    { "band": "Hilda canta a Charly", "time": "16:30" },
+    { "band": "El Mató a un Policía Motorizado", "time": "17:50" },
+    { "band": "Divididos", "time": "19:35" },
+    { "band": "Airbag", "time": "21:40" },
+    { "band": "Dillom", "time": "23:10" },
+    { "band": "Los Auténticos Decadentes", "time": "00:40" }
   ],
   "Escenario Sur": [
-    {"band": "Ryan", "time": "14:30"},
-    {"band": "Jóvenes Pordioseros", "time": "15:20"},
-    {"band": "Los Tipitos", "time": "16:30"},
-    {"band": "Guasones", "time": "17:50"},
-    {"band": "Wos", "time": "19:40"},
-    {"band": "Babasónicos", "time": "21:40"},
-    {"band": "Las Pastillas del Abuelo", "time": "23:10"},
-    {"band": "Ratones Paranoicos", "time": "00:30"}
+    { "band": "Ryan", "time": "14:30" },
+    { "band": "Jóvenes Pordioseros", "time": "15:20" },
+    { "band": "Los Tipitos", "time": "16:30" },
+    { "band": "Guasones", "time": "17:50" },
+    { "band": "Wos", "time": "19:40" },
+    { "band": "Babasónicos", "time": "21:40" },
+    { "band": "Las Pastillas del Abuelo", "time": "23:10" },
+    { "band": "Ratones Paranoicos", "time": "00:30" }
   ],
-  "Escenario de Montaña": [
-    {"band": "Inazulina", "time": "15:00"},
-    {"band": "El Zar", "time": "15:50"},
-    {"band": "Cruzando el Charcho", "time": "17:10"},
-    {"band": "La Vela Puerca", "time": "18:40"},
-    {"band": "No Te Va Gustar", "time": "20:40"},
-    {"band": "Conociendo Rusia", "time": "22:40"},
-    {"band": "Mariano Mellino", "time": "00:00"},
-    {"band": "Julian Jeweil", "time": "01:00"},
-    {"band": "Popof B2B Space 92", "time": "02:00"}
+  "Escenario Montaña": [
+    { "band": "Inazulina", "time": "15:00" },
+    { "band": "El Zar", "time": "15:50" },
+    { "band": "Cruzando el Charcho", "time": "17:10" },
+    { "band": "La Vela Puerca", "time": "18:40" },
+    { "band": "No Te Va Gustar", "time": "20:40" },
+    { "band": "Conociendo Rusia", "time": "22:40" },
+    { "band": "Mariano Mellino", "time": "00:00" },
+    { "band": "Julian Jeweil", "time": "01:00" },
+    { "band": "Popof B2B Space 92", "time": "02:00" }
   ],
   "Escenario Boomerang": [
-    {"band": "Uma", "time": "14:50"},
-    {"band": "Florian", "time": "15:40"},
-    {"band": "Vinocioa", "time": "16:30"},
-    {"band": "Siddhartha", "time": "17:20"},
-    {"band": "Indios", "time": "19:20"},
-    {"band": "Emmanuel Horvilleur", "time": "20:30"},
-    {"band": "El Plan de la Mariposa", "time": "21:30"},
-    {"band": "Turf", "time": "22:50"},
-    {"band": "Polenta", "time": "00:00"}
+    { "band": "Uma", "time": "14:50" },
+    { "band": "Florian", "time": "15:40" },
+    { "band": "Vinocioa", "time": "16:30" },
+    { "band": "Siddhartha", "time": "17:20" },
+    { "band": "Indios", "time": "19:20" },
+    { "band": "Emmanuel Horvilleur", "time": "20:30" },
+    { "band": "El Plan de la Mariposa", "time": "21:30" },
+    { "band": "Turf", "time": "22:50" },
+    { "band": "Polenta", "time": "00:00" }
   ],
   "La Casita del Blues": [
-    {"band": "Los Mentidores", "time": "15:00"},
-    {"band": "The Ginger Hearts", "time": "16:00"},
-    {"band": "Yulie y Vane Ruth", "time": "16:55"},
-    {"band": "Claudette King", "time": "17:50"},
-    {"band": "Los Espíritus", "time": "18:55"},
-    {"band": "Claudia Sette y Toyo Bagoso", "time": "20:10"},
-    {"band": "Memphis La Blusera", "time": "21:15"},
-    {"band": "Tributo a Pappo", "time": "22:40"}
+    { "band": "Los Mentidores", "time": "15:00" },
+    { "band": "The Ginger Hearts", "time": "16:00" },
+    { "band": "Yulie y Vane Ruth", "time": "16:55" },
+    { "band": "Claudette King", "time": "17:50" },
+    { "band": "Los Espíritus", "time": "18:55" },
+    { "band": "Claudia Sette y Toyo Bagoso", "time": "20:10" },
+    { "band": "Memphis La Blusera", "time": "21:15" },
+    { "band": "Tributo a Pappo", "time": "22:40" }
   ],
   "Hangar Club": [
-    {"band": "Marti Death", "time": "17:00"},
-    {"band": "Gaba", "time": "18:00"},
-    {"band": "Mabel", "time": "20:00"},
-    {"band": "Lupe", "time": "21:00"},
-    {"band": "DJs Pareja", "time": "22:00"}
+    { "band": "Marti Death", "time": "17:00" },
+    { "band": "Gaba", "time": "18:00" },
+    { "band": "Mabel", "time": "20:00" },
+    { "band": "Lupe", "time": "21:00" },
+    { "band": "DJs Pareja", "time": "22:00" }
   ]
 }

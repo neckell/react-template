@@ -3,7 +3,7 @@ export const API_BASE_URL = "http://localhost:3001"
 export enum Scenarios {
   NORTE = "Escenario Norte",
   SUR = "Escenario Sur",
-  MONTANA = "Escenario de Montaña",
+  MONTANA = "Escenario Montaña",
   PARAGUAY = "Escenario Paraguay",
   BOOMERANG = "Escenario Boomerang",
   CASITA_BLUES = "La Casita del Blues",

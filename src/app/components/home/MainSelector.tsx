@@ -388,7 +388,7 @@ const MainSelector: FC = () => {
               />
               <div className="space-y-4">
                 <h2 className="text-xl font-bold">
-                  Mi Grilla - Dia {selectedDay}{" "}
+                  Mi Grilla - Día {selectedDay}{" "}
                   {selectedDay === 1 &&
                   sortedArtistsByDay.day1Artists.length > 0
                     ? `(${sortedArtistsByDay.day1Artists.length})`
