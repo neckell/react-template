@@ -6,6 +6,7 @@ import {
   ArrowLeftCircleIcon,
   ArrowUpCircleIcon,
   TrashIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline"
 import {
   Band,
@@ -76,7 +77,18 @@ const MainSelector: FC = () => {
   }
 
   const handleClearAll = () => {
-    setSelectedArtists(new Map())
+    const { day1Artists, day2Artists } = getArtistsByDay(selectedArtists)
+    const newSelectedArtists = new Map(selectedArtists)
+    
+    // Get the list of artists to remove based on selected day
+    const artistsToRemove = selectedDay === 1 ? day1Artists : day2Artists
+    
+    // Remove each artist from that day
+    artistsToRemove.forEach(artist => {
+      newSelectedArtists.delete(artist.id)
+    })
+    
+    setSelectedArtists(newSelectedArtists)
   }
 
   const getArtistsByDay = (
@@ -366,26 +378,18 @@ const MainSelector: FC = () => {
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ type: "spring", damping: 20 }}
-              drag="y"
-              dragConstraints={{ top: 0 }}
-              dragElastic={0.2}
-              onDragEnd={(_, info) => {
-                if (info.offset.y > 100) {
-                  setIsBottomSheetOpen(false);
-                }
-              }}
               className="lg:hidden fixed bottom-0 left-0 right-0 bg-base-100 rounded-t-2xl p-4 z-50 max-h-[60vh] overflow-y-auto"
             >
-              <motion.div 
-                className="w-12 h-1.5 bg-base-content/20 mx-auto rounded-full mb-4 cursor-grab active:cursor-grabbing"
-                animate={{
-                  y: isBottomSheetOpen ? 0 : 8,
-                  opacity: isBottomSheetOpen ? 1 : 0
-                }}
-                transition={{
-                  duration: 0.2
-                }}
-              />
+              <div className="flex items-center justify-center my-3 relative">
+                <div className="w-16 h-1.5 bg-base-content/20 rounded-full" />
+                <button
+                  onClick={() => setIsBottomSheetOpen(false)}
+                  className="btn btn-ghost btn-sm btn-circle absolute right-0"
+                  title="Cerrar"
+                >
+                  <XMarkIcon className="w-5 h-5" />
+                </button>
+              </div>
               <div className="space-y-4">
                 <h2 className="text-xl font-bold">
                   Mi Grilla - Día {selectedDay}{" "}
