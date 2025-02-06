@@ -169,7 +169,7 @@ const MainSelector: FC = () => {
 
   return (
     <>
-      <main className="flex-1 pt-20 px-4 pb-24 lg:pb-4 mt-6">
+      <main className="flex-1 pt-20 px-4 pb-8 lg:pb-24 lg:pb-4 mt-6">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Desktop Sidebar */}
@@ -263,14 +263,12 @@ const MainSelector: FC = () => {
                             Día 2
                           </Button>
                         </div>
-                        {!isMobile && (
-                          <Button
-                            color="primary"
-                            onClick={() => setCurrentStep("mySelection")}
-                          >
-                            Ver Mi Selección →
-                          </Button>
-                        )}
+                        <Button
+                          color="primary"
+                          onClick={() => setCurrentStep("mySelection")}
+                        >
+                          Ver Mi Selección →
+                        </Button>
                       </div>
                       <DaySection
                         dayNumber={selectedDay}
@@ -281,6 +279,16 @@ const MainSelector: FC = () => {
                           selectedDay === 1 ? day1Schedule : day2Schedule,
                         )}
                       />
+                      {isMobile && (
+                        <div className="flex justify-center mt-5">
+                          <Button
+                            color="primary"
+                            onClick={() => setCurrentStep("mySelection")}
+                          >
+                            Ver Mi Selección →
+                          </Button>
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 ) : (
@@ -317,7 +325,7 @@ const MainSelector: FC = () => {
       {/* Mobile FAB */}
 
       <motion.button
-        className={`lg:hidden fixed top-28 right-6 btn btn-circle btn-primary btn-lg shadow-lg z-[100]
+        className={`lg:hidden fixed bottom-4 right-6 btn btn-circle btn-primary btn-lg shadow-lg z-[100]
             ${(isBottomSheetOpen || currentStep === "mySelection") && "hidden"}`}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsBottomSheetOpen(true)}
@@ -333,11 +341,11 @@ const MainSelector: FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
-            className={`fixed ${isMobile ? "left-6" : "right-6"} bottom-6 z-[100] p-2 rounded-full 
-            bg-primary text-primary-content shadow-lg hover:bg-primary-focus transition-colors duration-200`}
+            className={`fixed ${isMobile ? "left-6" : "right-6"} bottom-4 z-[100] p-2 rounded-full 
+            bg-neutral text-primary-content shadow-lg hover:bg-primary-focus transition-colors duration-200`}
             aria-label="Scroll to top"
           >
-            <ArrowUpCircleIcon className="w-8" />
+            <ArrowUpCircleIcon className="w-8 text-info" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -358,7 +366,7 @@ const MainSelector: FC = () => {
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ type: "spring", damping: 20 }}
-              className="lg:hidden fixed bottom-0 left-0 right-0 bg-base-100 rounded-t-2xl p-4 z-50 max-h-[80vh] overflow-y-auto"
+              className="lg:hidden fixed bottom-0 left-0 right-0 bg-base-100 rounded-t-2xl p-4 z-50 max-h-[60vh] overflow-y-auto"
             >
               <div className="w-12 h-1.5 bg-base-content/20 mx-auto rounded-full mb-4" />
               <div className="space-y-4">
@@ -409,14 +417,16 @@ const MainSelector: FC = () => {
                   )}
                 </div>
                 {selectedArtists.size > 0 && (
-                  <Button
-                    color="error"
-                    size="sm"
-                    className="w-full"
-                    onClick={handleClearAll}
-                  >
-                    Limpiar Todo
-                  </Button>
+                  <div className="flex justify-center">
+                    <Button
+                      color="error"
+                      size="sm"
+                      className="max-w-xs"
+                      onClick={handleClearAll}
+                    >
+                      Limpiar Todo
+                    </Button>
+                  </div>
                 )}
               </div>
             </motion.div>

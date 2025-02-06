@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
-import { setTheme } from "../redux/reducers/settingsSlice"
 import { useAppDispatch, useAppSelector } from "../redux/config/hooks"
+import { setTheme } from "../redux/reducers/settingsSlice"
 
 const useTheme = () => {
   const bodyRef = useRef<HTMLBodyElement | null>(null)
@@ -27,7 +27,11 @@ const useTheme = () => {
     }
   }, [bodyRef.current])
 
-  bodyRef.current?.setAttribute("data-theme", currentTheme)
+  useEffect(() => {
+    if (bodyRef.current && currentTheme) {
+      bodyRef.current.setAttribute("data-theme", currentTheme)
+    }
+  }, [currentTheme])
 
   const changeTheme = (theme: string) => {
     dispatch(setTheme(theme))
