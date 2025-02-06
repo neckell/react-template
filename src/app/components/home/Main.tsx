@@ -326,7 +326,7 @@ const Main: FC = () => {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
                 >
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-4">
                     <Button
                       color="ghost"
                       onClick={() => setCurrentStep("selection")}

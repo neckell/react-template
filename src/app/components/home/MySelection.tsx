@@ -6,6 +6,8 @@ import {
 import { FC, useMemo, useState } from "react"
 import { Button } from "../daisy"
 import { normalizeTime } from "./common"
+import { useMediaQuery } from "react-responsive"
+import { breakpoints } from "../../constants/breakpoints"
 
 export interface SelectedArtist {
   id: string
@@ -56,6 +58,7 @@ export const MySelection: FC<MySelectionProps> = ({
   onDelete,
 }) => {
   const [viewMode, setViewMode] = useState<"stage" | "time">("stage")
+  const isMobile = useMediaQuery({ query: breakpoints.sm })
 
   const sortedArtists = useMemo(() => {
     // Sort day 1 artists
@@ -196,6 +199,8 @@ export const MySelection: FC<MySelectionProps> = ({
           : formatDayScheduleByTime(day2Artists)
     }
 
+    message += "\n🔗 Armá tu grilla en: https://cr2025.vercel.app"
+
     return message
   }
 
@@ -234,8 +239,8 @@ export const MySelection: FC<MySelectionProps> = ({
 
   return (
     <div className="bg-base-200 rounded-lg p-6">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold">Mi Selección</h2>
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold w-full sm:w-auto mb-4 sm:mb-0">Mi Selección</h2>
         <div className="flex items-center gap-4">
           <div className="join">
             <Button
@@ -337,7 +342,7 @@ export const MySelection: FC<MySelectionProps> = ({
       {selectedArtists.size > 0 && (
         <div className="flex justify-center gap-4 mt-8">
           <Button
-            size="lg"
+            size={isMobile ? "md" : "lg"}
             color="secondary"
             onClick={handleShare}
             className="gap-2"
@@ -346,7 +351,7 @@ export const MySelection: FC<MySelectionProps> = ({
             Compartir
           </Button>
           <Button
-            size="lg"
+            size={isMobile ? "md" : "lg"}
             color="secondary"
             onClick={handleCopyToClipboard}
             className="gap-2"
