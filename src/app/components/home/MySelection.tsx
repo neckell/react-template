@@ -209,21 +209,9 @@ export const MySelection: FC<MySelectionProps> = ({
     const message = generateShareMessage()
 
     if (navigator.share) {
-      try {
-        await navigator.share({
-          text: message,
-        })
-      } catch (error) {
-        window.open(
-          `https://wa.me/?text=${encodeURIComponent(message)}`,
-          "_blank",
-        )
-      }
-    } else {
-      window.open(
-        `https://wa.me/?text=${encodeURIComponent(message)}`,
-        "_blank",
-      )
+      await navigator.share({
+        text: message,
+      })
     }
   }
 
